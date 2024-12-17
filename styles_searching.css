@@ -1,0 +1,230 @@
+/* Farb-Variablen */
+:root {
+    --primary-color: #F3ECE7;  /* Primärfarbe: leichtes Beige */
+    --secondary-color: #e5d3b7;
+    --dark-color: #6B4226; /* Akzentfarbe: Mittelbraun */
+    --text-color: #3E2B20;     /* Textfarbe: dunkles Schokoladenbraun */
+    --highlight-color: #7e500f; /* Highlight-Farbe: dunkleres Braun */
+    --middle-color: #ccb28b; /* Hintergrund für Card Header */
+}
+
+/* Allgemeine Stile für die Seite */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color); /* Primärfarbe */
+    margin: 0;
+    padding: 0;
+    color: var(--text-color); /* Textfarbe */
+}
+
+/* Hero Section */
+.hero {
+    background-color: transparent;
+    color: var(--primary-color) !important; /* Primärfarbe */
+    padding: 60px 0;
+}
+
+.hero h1,
+.hero p {
+    color: var(--primary-color) !important; /* Primärfarbe */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+nav,
+section.hero.bg-dark {
+    background-color: transparent;
+}
+
+/* Formular-Stile */
+form {
+    margin-bottom: 30px;
+}
+
+/* Eingabefeld und Button */
+#spellName {
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid var(--secondary-color); /* Akzentfarbe */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+    background-color: var(--primary-color); /* Kartenhintergrund */
+}
+
+#spellName:focus,
+#spellName:hover {
+    border-color: var(--middle-color); /* Highlight-Farbe */
+    background-color: var(--primary-color); /* Primärfarbe */
+    outline: none;
+}
+
+/* Button primär */
+.btn-primary {
+    font-size: 1rem;
+    margin-top: 10px;
+    width: fit-content;
+    background-color: var(--secondary-color); /* Akzentfarbe */
+    border: none;
+    color: var(--dark-color);
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--middle-color); /* Highlight-Farbe */
+    color: var(--text-color); /* Primärfarbe */
+}
+
+/* Formgroup Stile */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group.col-12.col-md-6.col-lg-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Accordion-Stile */
+.card-header {
+    background-color: var(--middle-color); /* Hintergrundfarbe für Card Header */
+    color: var(--text-color); /* Textfarbe für Card Header */
+    transition: background-color 0.3s ease;
+}
+
+.card-header:hover,
+.card-header:active {
+    background-color: #ba9d72; /* Hintergrundfarbe für Card Header */
+    color: var(--text-color); /* Textfarbe für Card Header */
+}
+
+.card-body {
+    background-color: var(--secondary-color); /* Kartenhintergrund */
+}
+
+/* Hintergrundfarbe für das .block-Element */
+.block {
+    background-color: var(--dark-color); /* Hintergrundfarbe für .block */
+    padding: 20px;
+    color: var(--primary-color) !important; /* Primärfarbe */
+}
+
+a.nav-link {
+    color: var(--secondary-color) !important; /* Farbton für Links */
+    transition: color 0.5s ease;
+}
+
+a.nav-link:hover {
+    color: var(--primary-color) !important; /* Weiß für Hover-Effekt */
+}
+
+a.navbar-brand {
+    color: var(--secondary-color) !important; /* Farbton für Navbar-Brand */
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: 'Arial', sans-serif;
+}
+
+#aktiv.nav-link {
+    font-weight: bold !important;
+}
+
+.bg-dark {
+    background-color: var(--block-background) !important; /* Hintergrundfarbe für .bg-dark */
+}
+
+.hero.bg-dark.text-white.text-center.py-5 {
+    padding: 30px 0px 20px 0px !important;
+}
+
+.alert.alert-warning {
+    color: #a83a3a;
+    background-color: #d4696924;
+    border: 2px solid #a83a3a24;
+}
+
+/* Benutzerdefinierte Farben für Fehlermeldungen und Validierung */
+.invalid-feedback {
+    color: #a83a3a; /* Rote Fehlermeldungsschrift */
+}
+
+.is-invalid {
+    border: 2px solid #a83a3a66; /* Roter Rand für ungültige Eingabefelder */
+}
+
+/* Grüne Farben für gültige Eingaben */
+.is-valid {
+    border: 2px solid #3aa84166; /* Grüner Rand für gültige Eingabefelder */
+}
+
+.is-valid + .valid-feedback {
+    color: #3aa841; /* Grüne Schrift für gültige Eingaben */
+}
+
+/* Optional: Hintergrundfarben für Eingabefelder */
+.form-control.is-invalid {
+    background-color: #f8d7da; /* Leicht roter Hintergrund für ungültige Eingaben */
+}
+
+.form-control.is-valid {
+    background-color: #d4edda; /* Leicht grüner Hintergrund für gültige Eingaben */
+}
+
+/* Rote Icons für ungültige Eingabefelder */
+.is-invalid ~ .invalid-feedback i {
+    color: #a83a3a; /* Rote Icons für Fehler */
+}
+
+/* Grüne Icons für gültige Eingabefelder */
+.is-valid ~ .valid-feedback i {
+    color: #3aa841; /* Grüne Icons für Erfolg */
+}
+
+/* Optional: Icons im Input-Feld */
+.form-control.is-invalid ~ i {
+    color: #a83a3a; /* Rote Icons für ungültige Eingaben */
+}
+
+.form-control.is-valid ~ i {
+    color: #3aa841; /* Grüne Icons für gültige Eingaben */
+}
+
+a.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--highlight-color);
+}
+
+/* Ansprechende Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
