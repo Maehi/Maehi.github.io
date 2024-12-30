@@ -104,6 +104,11 @@ label, h2 {
     font-weight: bold;
 }
 
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
 /* Accordion-Stile */
 .card {
     color: var(--text-color);
