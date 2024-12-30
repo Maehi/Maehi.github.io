@@ -106,7 +106,7 @@ label {
 
 /* Accordion-Stile */
 .card {
-    margin-bottom: 20px; /* Abstand zwischen den Karten */
+    color: var(--text-color);
     border: none; /* Optional: Rand entfernen */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
