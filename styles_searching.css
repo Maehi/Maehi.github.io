@@ -119,6 +119,7 @@ h2 {
 .btn.btn-link {
     color: var(--text-color);
     font-size: 16px;
+    padding: 0px;
 }
 
 .btn.btn-link:hover,
