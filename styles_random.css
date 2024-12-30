@@ -117,8 +117,8 @@ a.navbar-brand {
 
 h2 {
     color: var(--text-color);
-    font-size: 16px;
-    padding: 0px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
