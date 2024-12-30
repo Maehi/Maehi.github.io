@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Here you can get a random Harry Potter spell.">
+    <title>Random Harry Potter Spell</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles_random.css">
+</head>
+
+<body>
+    <div class="block">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
+            <a class="navbar-brand" href="index.html">Spells</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto d-flex align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="searching.html">Search Spells</a></li>
+                    <li class="nav-item"><a class="nav-link" href="random.html">Spell-Generator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="list.html">All Spells</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="hero bg-dark text-white text-center py-5">
+            <h1>Random Harry Potter Spell</h1>
+            <p class="lead">Get a random spell from the wizarding world!</p>
+        </section>
+    </div>
+
+    <section class="container my-5" id="spellSection">
+        <div id="spellResult" class="card">
+            <div class="card-header">
+                <h5 class="mb-0" id="spellName">Click below to generate a random spell!</h5>
+            </div>
+            <div class="card-body">
+                <p id="spellDetails">Details will appear here.</p>
+            </div>
+        </div>
+        <button id="generateSpellButton" class="btn btn-primary mt-4">Generate Random Spell</button>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script_random.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+/* Farb-Variablen */
+:root {
+    --primary-color: #F3ECE7;
+    --secondary-color: #e5d3b7;
+    --dark-color: #6B4226;
+    --text-color: #3E2B20;
+    --highlight-color: #7e500f;
+    --middle-color: #ccb28b;
+}
+
+/* Allgemeine Stile für die Seite */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+    background-color: transparent;
+    color: var(--primary-color) !important;
+    padding: 60px 0;
+}
+
+.hero h1,
+.hero p {
+    color: var(--primary-color) !important;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+/* Button Primär */
+#generateSpellButton {
+    font-size: 1rem;
+    width: fit-content;
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--dark-color);
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+#generateSpellButton:hover,
+#generateSpellButton:focus {
+    background-color: var(--middle-color);
+    color: var(--text-color);
+}
+
+/* Card Stile */
+.card {
+    color: var(--text-color);
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--middle-color);
+    color: var(--text-color);
+}
+
+.card-body {
+    background-color: var(--secondary-color);
+}
+
+.block {
+    background-color: var(--dark-color);
+    padding: 20px;
+    color: var(--primary-color) !important;
+}
+
+a.nav-link {
+    color: var(--secondary-color) !important;
+}
+
+a.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+a.navbar-brand {
+    color: var(--secondary-color) !important;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.bg-dark {
+    background-color: var(--block-background) !important;
+}
+
+.hero.bg-dark.text-white.text-center.py-5 {
+    padding: 30px 0px 20px 0px !important;
+}
+
+.alert.alert-warning {
+    color: #a83a3a;
+    background-color: #d4696924;
+    border: 2px solid #a83a3a24;
+}
+
+#spellDetails {
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
