@@ -126,7 +126,7 @@ h2 {
 }
 
 #spellAccordion {
-    margin-top: 30px; /* Abstand zum vorherigen Element */
+    margin-top: 10px; /* Abstand zum vorherigen Element */
     border-radius: 5px; /* Abgerundete Ecken für das Akkordeon */
     overflow: hidden; /* Für ein sauberes Layout */
 }
