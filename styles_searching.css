@@ -105,6 +105,19 @@ label {
 }
 
 /* Accordion-Stile */
+.card {
+    margin-bottom: 20px; /* Abstand zwischen den Karten */
+    border: none; /* Optional: Rand entfernen */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+#spellAccordion {
+    margin-top: 30px; /* Abstand zum vorherigen Element */
+    border-radius: 5px; /* Abgerundete Ecken für das Akkordeon */
+    overflow: hidden; /* Für ein sauberes Layout */
+}
+
+
 .card-header {
     background-color: var(--middle-color); /* Hintergrundfarbe für Card Header */
     color: var(--text-color); /* Textfarbe für Card Header */
