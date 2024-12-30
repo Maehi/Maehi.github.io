@@ -99,7 +99,7 @@ form {
     align-items: center;
 }
 
-label {
+label, h2 {
     font-size: 20px;
     font-weight: bold;
 }
