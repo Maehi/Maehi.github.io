@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const spellForm = document.getElementById("spellForm");
     const spellResults = document.getElementById("spellResults");
     const spellAccordion = document.getElementById("spellAccordion");
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const spellNameError = document.getElementById("spellNameError");
 
     // Event listener für das Formular
-    spellForm.addEventListener("submit", function (event) {
+    spellForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
         // Hole den Namen des Zaubers
@@ -55,42 +55,32 @@ document.addEventListener("DOMContentLoaded", function () {
         xhr.open("GET", `https://wizard-world-api.herokuapp.com/Spells`, true);
         xhr.setRequestHeader("Content-Type", "application/json");
 
-        xhr.onload = function () {
+        xhr.onload = function() {
             if (xhr.status >= 200 && xhr.status < 300) {
                 try {
                     const data = JSON.parse(xhr.responseText);
 
                     // Filtern der Zaubersprüche nach dem eingegebenen Namen
-                    const filteredSpells = data.filter((spell) =>
-                        spell.name.toLowerCase().includes(query)
-                    );
+                    const filteredSpells = data.filter(spell => spell.name.toLowerCase().includes(query));
 
                     // Sortieren der Zaubersprüche nach Name (alphabetisch)
-                    const sortedSpells = filteredSpells.sort((a, b) =>
-                        a.name.localeCompare(b.name)
-                    );
+                    const sortedSpells = filteredSpells.sort((a, b) => a.name.localeCompare(b.name));
 
                     // Zaubersprüche anzeigen
                     displaySpells(sortedSpells);
                 } catch (e) {
                     console.error("Fehler beim Parsen der Antwort:", e);
-                    showError(
-                        "Die Antwort der API konnte nicht verarbeitet werden."
-                    );
+                    showError("Die Antwort der API konnte nicht verarbeitet werden.");
                 }
             } else {
                 console.error("Fehler bei der Anfrage:", xhr.statusText);
-                showError(
-                    "Die API hat einen Fehler zurückgegeben. Bitte versuchen Sie es später erneut."
-                );
+                showError("Die API hat einen Fehler zurückgegeben. Bitte versuchen Sie es später erneut.");
             }
         };
 
-        xhr.onerror = function () {
+        xhr.onerror = function() {
             console.error("Anfrage fehlgeschlagen.");
-            showError(
-                "There has been a problem with the connection to the API. Please check your internet connection."
-            );
+            showError("There has been a problem with the connection to the API. Please check your internet connection.");
         };
 
         xhr.send();
@@ -111,18 +101,16 @@ document.addEventListener("DOMContentLoaded", function () {
         spells.forEach((spell, index) => {
             const card = document.createElement("div");
             card.classList.add("card");
-            card.setAttribute("tabindex", "0");
-            card.setAttribute("role", "button");
-            card.setAttribute("aria-expanded", "false");
             card.innerHTML = `
-                <div class="card-header" id="heading${index}" aria-controls="collapse${index}">
+                <div class="card-header" id="heading${index}">
                     <h5 class="mb-0">
-                        <span>${spell.name} - ${spell.type}</span>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                            ${spell.name} - ${spell.type}
+                        </button>
                     </h5>
                 </div>
                 <div id="collapse${index}" class="collapse" aria-labelledby="heading${index}" data-parent="#spellAccordion">
                     <div class="card-body">
-                        <strong>ID:</strong> ${spell.id}<br>
                         <strong>Incantation:</strong> ${spell.incantation || "No incantation"}<br>
                         <strong>Effect:</strong> ${spell.effect || "No description"}<br>
                         <strong>Can be verbal:</strong> ${spell.canBeVerbal ? "Yes" : "No"}<br>
@@ -131,27 +119,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
-
-            // Event listener für Klick und Enter hinzufügen
-            card.addEventListener("click", () => toggleCard(card, index));
-            card.addEventListener("keydown", (e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    toggleCard(card, index);
-                }
-            });
-
             spellAccordion.appendChild(card);
         });
 
         spellResults.style.display = "block";
-    }
 
-    function toggleCard(card, index) {
-        const content = document.getElementById(`collapse${index}`);
-        const isExpanded = card.getAttribute("aria-expanded") === "true";
-        card.setAttribute("aria-expanded", !isExpanded);
-        content.classList.toggle("collapse", isExpanded);
-        content.classList.toggle("show", !isExpanded);
+        // Bootstrap Collapse initialisieren
+        $('#spellAccordion').collapse();
     }
 });
