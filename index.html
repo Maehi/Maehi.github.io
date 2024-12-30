@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome on our Harry Potter website. Here you can choose what you want to do on our Website.">
-    <title>Zaubersprüche aus Harry Potter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Spells from Harry Potter</title>
+
+    <!-- Preload wichtige Ressourcen -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://code.jquery.com/jquery-3.5.1.slim.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" as="script">
+    
+    <!-- Kritische CSS inline -->
+    <style>
+        /* Hier könnte man die kritischen CSS-Regeln einfügen */
+    </style>
+
+    <!-- Externe Stylesheets (Optional) -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,9 +48,8 @@
 
     <!-- Hauptinhalt -->
     <section class="container my-5">
-        <!-- Links ausgerichteter Titel -->
         <h2 class="text-left mb-4">Our different sites</h2>
-        
+
         <!-- Buttons in einer gleichmäßigen Zeile -->
         <div class="row">
             <div class="col-md-4 mb-3">
@@ -55,7 +65,7 @@
     </section>
 
     <!-- Bootstrap JS & jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
