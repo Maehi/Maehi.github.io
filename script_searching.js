@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const spellForm = document.getElementById("spellForm");
     const spellResults = document.getElementById("spellResults");
     const spellAccordion = document.getElementById("spellAccordion");
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const spellNameError = document.getElementById("spellNameError");
 
     // Event listener für das Formular
-    spellForm.addEventListener("submit", function(event) {
+    spellForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         // Hole den Namen des Zaubers
@@ -55,16 +55,20 @@ document.addEventListener("DOMContentLoaded", function() {
         xhr.open("GET", `https://wizard-world-api.herokuapp.com/Spells`, true);
         xhr.setRequestHeader("Content-Type", "application/json");
 
-        xhr.onload = function() {
+        xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status < 300) {
                 try {
                     const data = JSON.parse(xhr.responseText);
 
                     // Filtern der Zaubersprüche nach dem eingegebenen Namen
-                    const filteredSpells = data.filter(spell => spell.name.toLowerCase().includes(query));
+                    const filteredSpells = data.filter(spell =>
+                        spell.name.toLowerCase().includes(query)
+                    );
 
                     // Sortieren der Zaubersprüche nach Name (alphabetisch)
-                    const sortedSpells = filteredSpells.sort((a, b) => a.name.localeCompare(b.name));
+                    const sortedSpells = filteredSpells.sort((a, b) =>
+                        a.name.localeCompare(b.name)
+                    );
 
                     // Zaubersprüche anzeigen
                     displaySpells(sortedSpells);
@@ -78,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
 
-        xhr.onerror = function() {
+        xhr.onerror = function () {
             console.error("Anfrage fehlgeschlagen.");
             showError("There was an issue fetching the desired spell(s). Please check your internet connection or try again later.");
         };
@@ -102,11 +106,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const card = document.createElement("div");
             card.classList.add("card");
             card.innerHTML = `
-                <div class="card-header" id="heading${index}">
+                <div class="card-header" id="heading${index}" tabindex="0" data-target="#collapse${index}">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
-                            ${spell.name} - ${spell.type}
-                        </button>
+                        ${spell.name} - ${spell.type}
                     </h5>
                 </div>
                 <div id="collapse${index}" class="collapse" aria-labelledby="heading${index}" data-parent="#spellAccordion">
@@ -120,11 +122,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             `;
             spellAccordion.appendChild(card);
+
+            // Click event for opening and closing
+            card.querySelector('.card-header').addEventListener('click', () => {
+                const target = card.querySelector('.collapse');
+                $(target).collapse('toggle');
+            });
+
+            // Enter key event for accessibility
+            card.querySelector('.card-header').addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    const target = card.querySelector('.collapse');
+                    $(target).collapse('toggle');
+                }
+            });
         });
 
         spellResults.style.display = "block";
-
-        // Bootstrap Collapse initialisieren
-        $('#spellAccordion').collapse();
     }
 });
