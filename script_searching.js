@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         xhr.onerror = function() {
             console.error("Anfrage fehlgeschlagen.");
-            showError("There has been a problem with the connection to the API. Please check your internet connection.");
+            showError("There was an issue fetching the desired spell(s). Please check your internet connection or try again later.");
         };
 
         xhr.send();

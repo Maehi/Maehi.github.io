@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(error => {
                 spellNameElement.textContent = "Error";
-                spellDetailsElement.textContent = "There was an issue fetching the random spell. Please try again later.";
+                spellDetailsElement.textContent = "There was an issue fetching the random spell. Please check your internet connection or try again later.";
             });
     });
 });
