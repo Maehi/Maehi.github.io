@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Here you can find all spells.">
+    <title>Harry Potter Spells</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles_list.css">
+</head>
+
+<body>
+    <div class="block">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
+            <a class="navbar-brand" href="index.html">Spells</a>
+            <!-- Updated Navbar Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto d-flex align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="searching.html">Search Spells</a></li>
+                    <li class="nav-item"><a class="nav-link" href="random.html">Spell Generator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="list.html">All Spells</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="hero bg-dark text-white text-center py-5">
+            <h1>All Spells</h1>
+            <p class="lead">Discover the magical world of spells</p>
+        </section>
+    </div>
+
+    <section class="container my-5" id="spellsSection">
+        <div id="errorMessage" class="alert alert-danger" style="display:none;">Failed to fetch spells. Please check your connection or try again later.</div>
+        <div id="spellsAccordion" class="accordion"></div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+     <script src="script_list.js"></script>
+</body>
+
+</html>
