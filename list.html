@@ -13,11 +13,10 @@
 
 <body>
     <div class="block">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between" role="navigation" aria-label="Main Navigation">
             <a class="navbar-brand" href="index.html">Spells</a>
-            <!-- Updated Navbar Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" role="button">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,13 +35,17 @@
         </section>
     </div>
 
-    <section class="container my-5" id="spellsSection">
-        <h2>Find out more about...</h2>
-        <div id="errorMessage" class="alert alert-danger" style="display:none;" role="alert">
-            Failed to fetch spells. Please check your connection or try again later.
-        </div>
-        <div id="spellsAccordion" class="accordion" role="tablist" aria-multiselectable="true"></div>
-    </section>
+    <main>
+        <section class="container my-5" id="spellsSection">
+            <h2 class="text-left">Find out more about...</h2>
+            <div id="errorMessage" class="alert alert-danger" style="display:none;" role="alert">
+                Failed to fetch spells. Please check your connection or try again later.
+            </div>
+            <div id="spellsAccordion" class="accordion" role="tablist" aria-multiselectable="true">
+                <!-- Spell items will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
