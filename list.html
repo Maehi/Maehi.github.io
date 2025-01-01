@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +17,7 @@
             <a class="navbar-brand" href="index.html">Spells</a>
             <!-- Updated Navbar Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" role="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,8 +37,10 @@
     </div>
 
     <section class="container my-5" id="spellsSection">
-        <div id="errorMessage" class="alert alert-danger" style="display:none;">Failed to fetch spells. Please check your connection or try again later.</div>
-        <div id="spellsAccordion" class="accordion"></div>
+        <div id="errorMessage" class="alert alert-danger" style="display:none;" role="alert">
+            Failed to fetch spells. Please check your connection or try again later.
+        </div>
+        <div id="spellsAccordion" class="accordion" role="tablist" aria-multiselectable="true"></div>
     </section>
 
     <!-- jQuery -->
@@ -45,7 +48,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom Script -->
-     <script src="script_list.js"></script>
+    <script src="script_list.js"></script>
 </body>
 
 </html>
