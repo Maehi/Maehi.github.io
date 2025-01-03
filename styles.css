@@ -34,7 +34,8 @@ body {
     margin-bottom: 10px;
 }
 
-.hero p {
+.hero p,
+p {
     font-size: 1.25rem;
 }
 
@@ -218,6 +219,7 @@ h2 {
     width: 100%;
     max-width: 100%;
     padding: 0;
+    margin-top: 2rem;
     margin-bottom: .5rem;
     font-size: 1.5rem;
     line-height: inherit;
